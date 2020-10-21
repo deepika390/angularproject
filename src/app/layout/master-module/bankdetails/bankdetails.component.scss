@@ -1,0 +1,47 @@
+
+
+select {
+        width: 300px;
+        margin: 20px;
+        height: 40px;
+        font-size: large;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    select:focus {
+        min-width: 300px;
+        min-height: 40px;
+        width: auto;
+    }
+    h2 {
+        font-weight: bold;
+        color : lightseagreen;
+        font-size: 32px;
+        font-family: 'Times New Roman', Times, serif;
+      }
+      h1 {
+        font-weight: bold;
+        color : maroon;
+        font-size: 32px;
+        font-family: 'Times New Roman', Times, serif;
+      }
+
+      
+      table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        font-family: 'Courier New', Courier, monospace;
+      }
+      th, td {
+        padding: 5px;
+        text-align: left;    
+      }
+      #t01 tr:nth-child(even) {
+        background-color: #eee;
+      }
+      #t01 tr:nth-child(odd) {
+       background-color: #fff;
+      }
+      #t01 th {
+        background-color: black;
+        color: white;
+      }

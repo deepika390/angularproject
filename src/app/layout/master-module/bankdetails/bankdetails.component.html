@@ -1,0 +1,205 @@
+<p>bankdetails works!</p>
+
+<div class="create-account">
+    <h1>SELECT DETAILS</h1>
+    <div class="row">
+      <div class="col-lg-8">
+        <form [formGroup]="createAccountForm">
+          <h2>BANK DETAILS</h2>
+          <hr>
+          <div class="form-group">
+            
+            <select formControlName="bank1" class="form-control" (change)="onChangeBank($event.target.value)">
+              <option value="">SELECT BANK...</option>
+              <option *ngFor="let bank of bankdetails" [value]="bank.bid">{{bank.bname}}</option>
+                         
+               </select>
+               <select formControlName="bank1" class="form-control" (change)="onChangeBank($event.target.value)">
+               <option value="">SELECT BANK ADDRESS</option>
+               <option *ngFor="let bank of bankdetails" [value]="bank.bid">{{bank.baddress}}</option>
+              </select>
+              <select formControlName="bank1" class="form-control" (change)="onChangeBank($event.target.value)">
+              <option value="">SELECT BANK Status</option>
+              <option *ngFor="let bank of bankdetails" [value]="bank.bid">{{bank.bstatus}}</option>
+              </select>
+          </div>
+          <h2>BRANCH DETAILS</h2>
+          <hr>
+          <div class="form-group">
+            <select formControlName="branch1" class="form-control" (change)="onChangeBranch($event.target.value)">
+              <option value="">SELECT BRANCH Name</option>
+              <option *ngFor="let branch of branch" [value]="branch.branch_id">
+      
+                {{branch.brname}}
+                </option>
+            </select>
+                <select formControlName="branch1" class="form-control" (change)="onChangeBranch($event.target.value)">
+                  <option value="">SELECT BRANCH Address</option>
+                  <option *ngFor="let branch of branch" [value]="branch.branch_id">
+                {{branch.branch_address}}
+                </option>
+                </select>
+                <select formControlName="branch1" class="form-control" (change)="onChangeBranch($event.target.value)">
+                  <option value="">SELECT BRANCH Type</option>
+                  <option *ngFor="let branch of branch" [value]="branch.branch_id">
+                {{branch.branch_type}}
+                  </option>
+                  </select>
+                <select formControlName="branch1" class="form-control" (change)="onChangeBranch($event.target.value)">
+                  <option value="">SELECT BRANCH Email</option>
+                  <option *ngFor="let branch of branch" [value]="branch.branch_id">
+                {{branch.branch_email}}
+                </option>
+                </select>
+                <select formControlName="branch1" class="form-control" (change)="onChangeBranch($event.target.value)">
+                  <option value="">SELECT BRANCH IFSC</option>
+                  <option *ngFor="let branch of branch" [value]="branch.branch_id">
+                {{branch.branch_ifsc}}
+                </option>
+                </select>
+                <select formControlName="branch1" class="form-control" (change)="onChangeBranch($event.target.value)">
+                  <option value="">SELECT BRANCH MFSC</option>
+                  <option *ngFor="let branch of branch" [value]="branch.branch_id">
+                {{branch.branch_mfsc}}
+                </option>
+                </select>
+                <select formControlName="branch1" class="form-control" (change)="onChangeBranch($event.target.value)">
+                  <option value="">SELECT BRANCH CONTACT</option>
+                  <option *ngFor="let branch of branch" [value]="branch.branch_id">
+                {{branch.branch_phno}}
+                </option>
+                </select>
+               
+                <select formControlName="branch1" class="form-control" (change)="onChangeBranch($event.target.value)">
+                  <option value="">SELECT BRANCH STATUS</option>
+                  <option *ngFor="let branch of branch" [value]="branch.branch_id">
+                {{branch.branch_status}}
+                </option>
+                </select>
+              
+          </div>
+          <h2>ROLE DETAILS</h2>
+          <hr>
+          <div class="form-group">
+            <select formControlName="role1" class="form-control">
+              <option value="">SELECT ROLE...</option>
+              <option *ngFor="let role of role" [value]="role.rid">
+                {{role.rname}}
+                </option>
+                </select>
+                <select formControlName="role1" class="form-control">
+                  <option value="">SELECT ROLE...</option>
+                  <option *ngFor="let role of role" [value]="role.rid">
+                {{role.rdesc}}
+                </option>
+                </select>
+                <select formControlName="role1" class="form-control">
+                  <option value="">SELECT ROLE...</option>
+                  <option *ngFor="let role of role" [value]="role.rid">
+                {{role.rstatus}}
+              </option>
+            </select>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div>
+    <div class="container">
+      <table id="t01">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">NAME</th>
+            <th scope="col">ADDRESS</th>
+            <th scope="col">STATUS</th>
+            <th scope="col">DELETE</th>
+                   
+            
+          </tr>
+        </thead>
+        <tbody >
+          <tr *ngFor='let b of bankdetails'>
+            <td> {{b.bid}}</td>
+            <td>{{b.bname}}</td>
+            <td>{{b.baddress}}</td>
+            <td>{{b.bstatus}}</td>
+            <td><input type="button" value="DELETE" (click)="deleteData(b)"></td>
+              
+                                                 
+            </tr>
+        </tbody>
+      </table>
+    </div>
+    <br>
+    <hr>
+    <div class="container">
+      <table id="t01">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">NAME</th>
+            <th scope="col">ADDRESS</th>
+            <th scope="col">EMAIL</th>
+            <th scope="col">IFSC</th>
+            <th scope="col">MFSC</th>
+            <th scope="col">CONTACT NO</th>
+            <th scope="col">TYPE</th>
+            <th scope="col">STATUS</th>
+            <th scope="col">DELETE</th>
+                   
+            
+          </tr>
+        </thead>
+        <tbody >
+          <tr *ngFor='let br of branch'>
+            <td> {{br.branch_id}</td>
+            <td>{{br.brname}}</td>
+            <td>{{br.branch_address}}</td>
+            <td>{{br.branch_email}}</td>
+            <td>{{br.branch_ifsc}}</td>
+            <td>{{br.branch_mfsc}}</td>
+            <td>{{br.branch_phno}}</td>
+            <td>{{br.branch_type}}</td>
+            <td>{{br.branch_status}}</td>
+            <td><input type="button" value="DELETE" (click)="deleteBranch(br)"></td>
+              
+                                                 
+            </tr>
+        </tbody>
+      </table>
+    </div>
+    <br>
+    <hr>
+    <div class="container">
+      <table id="t01">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">NAME</th>
+            <th scope="col">DESCRIPTION</th>
+            <th scope="col">STATUS</th>
+            
+            <th scope="col">DELETE</th>
+                   
+            
+          </tr>
+        </thead>
+        <tbody >
+          <tr *ngFor='let r of role'>
+            <td> {{r.rid}</td>
+            <td>{{r.rname}}</td>
+            <td>{{r.rdesc}}</td>
+            <td>{{r.rstatus}}</td>
+            <td><input type="button" value="DELETE" (click)="deleteRole(r)"></td>
+              
+                                                 
+            </tr>
+        </tbody>
+      </table>
+    </div>
+    
+
+    </div>
+    
